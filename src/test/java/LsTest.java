@@ -1,4 +1,4 @@
-import org.kohsuke.args4j.Option;
+import static org.junit.jupiter.api.Assertions.*;
 
 class LsTest {
 
