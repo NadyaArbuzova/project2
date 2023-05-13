@@ -8,7 +8,7 @@ import java.util.*;
 
 public class F {
     private final File dir_or_file;
-    private ArrayList<String> outputText = new ArrayList<>();
+    private final ArrayList<String> outputText = new ArrayList<>();
 
     public F(String inputName) {
         dir_or_file = new File(inputName);
@@ -18,17 +18,15 @@ public class F {
         File outputFile = new File(outputName);
         try {
             FileWriter writer = new FileWriter(outputFile);
-            for (String s : outputText) {
-                writer.write(s);
-                writer.close();
-            }
+            writer.write(outputText.toString());
+            writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void output(){
-        System.out.println(outputText);
+        System.out.print(outputText);
     }
 
     public void lFlag() {
@@ -61,7 +59,7 @@ public class F {
     }
 
     public void rFlag() {
-       Collections.sort(outputText, Comparator.reverseOrder());
+       outputText.sort(Comparator.reverseOrder());
     }
 
 }
