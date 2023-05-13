@@ -10,8 +10,11 @@ public class F {
     private final File dir_or_file;
     private final ArrayList<String> outputText = new ArrayList<>();
 
-    public F(String inputName) {
+    public F(String inputName, boolean l, boolean h, boolean r) {
         dir_or_file = new File(inputName);
+        if (l) lFlag();
+        if (h) hFlag();
+        if (r) rFlag();
     }
 
     public void output(String outputName){
@@ -29,7 +32,7 @@ public class F {
         System.out.print(outputText);
     }
 
-    public void lFlag() {
+    private void lFlag() {
         String flag;
         for (File file : Objects.requireNonNull(dir_or_file.listFiles())) {
             if (file.canExecute()) flag = "1";
@@ -42,7 +45,7 @@ public class F {
             Collections.sort(outputText);
         }
     }
-    public void hFlag() {
+    private void hFlag() {
         String flag;
         String fileSize;
         for (File file : Objects.requireNonNull(dir_or_file.listFiles())) {
@@ -58,7 +61,7 @@ public class F {
         }
     }
 
-    public void rFlag() {
+    private void rFlag() {
        outputText.sort(Comparator.reverseOrder());
     }
 

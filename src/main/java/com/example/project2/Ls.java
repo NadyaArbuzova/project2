@@ -37,10 +37,7 @@ public class Ls {
             System.err.println(e.getMessage());
         }
         try {
-            F file = new F(inputName);
-            if (lFlag) file.lFlag();
-            if (hFlag) file.hFlag();
-            if (rFlag) file.rFlag();
+            F file = new F(inputName, lFlag, hFlag, rFlag);
             if (outputName == null) file.output();
             else file.output(outputName);
         }catch (NullPointerException e){
