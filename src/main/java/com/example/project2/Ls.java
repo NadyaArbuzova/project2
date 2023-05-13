@@ -12,7 +12,7 @@ import org.kohsuke.args4j.Option;
 public class Ls {
 
     @Option(name = "-l", usage = "Long format output")
-    public boolean lFlag = false;
+    public boolean lFlag;
     @Option(name = "-h", usage = "Output to human-readable format")
     public boolean hFlag;
     @Option(name = "-r", usage = "Output order is reversed")
